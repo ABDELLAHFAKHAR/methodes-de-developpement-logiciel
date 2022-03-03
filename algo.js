@@ -1,6 +1,14 @@
 const fs = require('fs')
 const chalk = require("chalk")
 
+
+
+/*----------------------------exportation des fonctions-----------------------------------------*/
+module.exports = {help, add, supp, visuel};
+/*-----------------------------------------------------------------------------------------------*/
+
+
+/*-----------------------une fonction qui affiche les commandes---------------------------------*/ 
 function help(){
     const interface =`
     les commandes :
@@ -11,10 +19,13 @@ function help(){
 
     console.log(chalk.blue(interface));
 }
+/*----------------------------------------------------------------------------------------------*/
 
-module.exports = {help, add, supp, visuel};
 
 
+
+
+/* ---------------------une fonction qui ajoute les tâches------------------------------------*/
 function add() {
     reponse = process.argv[3];
 
@@ -36,6 +47,9 @@ function add() {
     }
   });
 }
+/*-------------------------------------------------------------------------------------------------------*/
+
+
 
 function jsonReader(filePath, cb) {
     fs.readFile(filePath, 'utf-8', (err, fileData) => {
@@ -52,6 +66,8 @@ function jsonReader(filePath, cb) {
   }
 
 
+
+/*----------------------------------------supression d'une tâche----------------------------------------*/
   function supp() {
     number = process.argv[3]
     jsonReader('./data.json', (err, data) => {
@@ -74,7 +90,12 @@ function jsonReader(filePath, cb) {
   });
   console.log('Tache supprimé!')
 }
+/*---------------------------------------------------------------------------------------------------------*/
 
+
+
+
+/*----------------------------------afficher la liste es tâches--------------------------------------------*/
 function visuel() {
     jsonReader('./data.json', (err, data) => {
         if(err) {
@@ -93,3 +114,4 @@ function visuel() {
     }
     });
 }
+/*----------------------------------------------------------------------------------------------------------*/
