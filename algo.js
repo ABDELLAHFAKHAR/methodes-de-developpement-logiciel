@@ -1,4 +1,5 @@
 const fs = require('fs')
+const chalk = require("chalk")
 
 function help(){
     const interface =`
@@ -8,7 +9,7 @@ function help(){
     3. node index.js delete -> supression d'une tache
     4. node index.js add -> ajouter une nouvelle taches`;
 
-    console.log(interface);
+    console.log(chalk.blue(interface));
 }
 
 module.exports = {help, add, supp, visuel};
@@ -85,7 +86,7 @@ function visuel() {
             {
                 if(data.tache[i] != "")
                 {
-                    console.log(i + " " + data.tache[i])
+                    console.log(chalk.green(i + " " + data.tache[i]))
                 }
             }
     

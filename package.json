@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/ABDELLAHFAKHAR/methodes-de-developpement-logiciel/issues"
   },
-  "homepage": "https://github.com/ABDELLAHFAKHAR/methodes-de-developpement-logiciel#readme"
+  "homepage": "https://github.com/ABDELLAHFAKHAR/methodes-de-developpement-logiciel#readme",
+  "dependencies": {
+    "chalk": "^2.4.1"
+  }
 }
