@@ -1,6 +1,6 @@
 const fs=require('fs')
 const fd=fs.openSync("data.json",'a')
-
+const integre = require("./algo.js")
 
 
 fs.readFile('data.json','utf8',function(err,data){
@@ -19,13 +19,13 @@ var detection = process.argv[2]
 
 switch(detection){
     case "help" : 
-        console.log("vous êtes dans help")
+        integre.help();
         break;
     case "add" :
-        console.log("vous êtes dans add")
+        integre.add();
         break;
     case "delete" :
-        console.log("vous êtes dans delete")
+        integre.supp();
         break;
     case "list" :
         console.log("vous êtes dans list")
