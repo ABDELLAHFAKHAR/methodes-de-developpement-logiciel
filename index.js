@@ -17,6 +17,8 @@ fs.readFile('data.json','utf8',function(err,data){
 
 var detection = process.argv[2]
 
+
+/*-------------------------------gère des évènements------------------------------------------------------*/
 switch(detection){
     case "help" : 
         integre.help();
@@ -33,3 +35,4 @@ switch(detection){
     default : 
         console.log("commande inconnu")
 }
+/*------------------------------------------------------------------------------------------------------*/
