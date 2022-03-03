@@ -28,7 +28,7 @@ switch(detection){
         integre.supp();
         break;
     case "list" :
-        console.log("vous êtes dans list")
+        integre.visuel();
         break;
     default : 
         console.log("commande inconnu")

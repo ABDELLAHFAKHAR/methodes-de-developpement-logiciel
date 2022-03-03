@@ -11,7 +11,7 @@ function help(){
     console.log(interface);
 }
 
-module.exports = {help, add, supp};
+module.exports = {help, add, supp, visuel};
 
 
 function add() {
@@ -72,4 +72,23 @@ function jsonReader(filePath, cb) {
     }
   });
   console.log('Tache supprimé!')
+}
+
+function visuel() {
+    jsonReader('./data.json', (err, data) => {
+        if(err) {
+          console.log(err);
+        } 
+        else {
+            
+            for(i = 0; i < data.tache.length; i++)
+            {
+                if(data.tache[i] != "")
+                {
+                    console.log(i + " " + data.tache[i])
+                }
+            }
+    
+    }
+    });
 }
