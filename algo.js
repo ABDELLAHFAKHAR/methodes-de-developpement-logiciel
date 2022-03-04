@@ -77,8 +77,9 @@ function jsonReader(filePath, cb) {
         else {
 
       let Nombre = Object.keys(data.tache).length;
-      
-        delete data.tache[number];
+          if(process.argv[3]<data.tache.length && process.argv[3])
+            data.tache.splice(number,1)
+
 
       fs.writeFile('./data.json', JSON.stringify(data, null, 2), err => {
         if(err) {
